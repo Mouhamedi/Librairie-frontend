@@ -1,0 +1,1 @@
+export { default as Adherents } from './Adherents'
