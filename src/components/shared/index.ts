@@ -1,0 +1,1 @@
+export { default as pageTitle} from "./pageTitle"

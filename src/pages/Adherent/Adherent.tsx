@@ -1,7 +1,11 @@
+
+import { Outlet } from "react-router-dom"
+
 const Adherents = () => {
   return (
     <div>
-      Adhérents
+      
+      <Outlet/>
     </div>
   )
 }

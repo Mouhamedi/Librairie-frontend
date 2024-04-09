@@ -1,4 +1,5 @@
 import { Book, BookCheck, BookOpenText, LucideIcon, User } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 type NavProps = {
     id: string;
@@ -10,7 +11,7 @@ type NavProps = {
 const menus: NavProps[] = [
     {
         id: 'adherents',
-        name: 'Adhérents',
+        name: 'Adherents',
         to: "/adherents",
         icon: User,
     },
@@ -46,9 +47,16 @@ const NavMenu = () => {
         <nav>
             <ul>
                 {menus.map((menu) => (
-                    <li key={menu.id} className="flex gap-4 py-3 items-center">
-                        <menu.icon className="size-4" />
-                        <span>{menu.name}</span>
+                    <li key={menu.id} >
+                        <NavLink to={menu.to} 
+                        className={({isActive}) => `flex gap-4 p-3 items-center hover:text-primary hover:bg-muted ${
+                          isActive ? "text-primary bg-muted" : undefined
+                          }`
+                         }
+                        >
+                          <menu.icon className="size-4" />
+                          <span>{menu.name}</span>
+                        </NavLink>
                     </li>
                 ))
 
